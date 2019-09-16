@@ -2,9 +2,11 @@
     <div class="container">
         <!-- <SearchBar v-on:termChange="onTermChange"></SearchBar> -->
         <SearchBar @termChange="onTermChange"></SearchBar>
-        <VideoDetail :video="selectedVideo"></VideoDetail>
-        <!-- <VideoList v-bind:videos="videos"></VideoList> -->
-        <VideoList @videoSelect="onVideoSelect" :videos="videos"></VideoList>
+        <div class="row">
+            <VideoDetail :video="selectedVideo"></VideoDetail>
+            <!-- <VideoList v-bind:videos="videos"></VideoList> -->
+            <VideoList @videoSelect="onVideoSelect" :videos="videos"></VideoList>
+        </div>
     </div>
 </template>
 

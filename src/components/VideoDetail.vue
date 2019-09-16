@@ -1,5 +1,8 @@
 <template>
-    <div v-if="video">
+    <div v-if="video" class="col-md-8">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" :src="videoUrl"></iframe>
+        </div>
         <div class="detail">
             <h4>{{ video.snippet.title }}</h4>
             <p>{{ video.snippet.description }}</p>
@@ -10,7 +13,15 @@
 <script>
 export default {
     name: 'VideoDetail',
-    props: ['video']
+    props: ['video'],
+    computed: {
+        videoUrl() {
+            //const videoId = this.video.id.videoId;
+            const { videoId } = this.video.id;
+            //return 'https://www.youtube.com/embed/' + videoId;
+            return `https://www.youtube.com/embed/${videoId}`;
+        }
+    }
 }
 </script>
 
